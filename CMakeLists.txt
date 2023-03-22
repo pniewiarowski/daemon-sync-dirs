@@ -12,4 +12,4 @@ add_executable(
         src/flag/Flag.h
         src/flag/Parser.cpp
         src/flag/Parser.h
-)
+        src/daemon/Daemon.cpp src/daemon/Daemon.h)
