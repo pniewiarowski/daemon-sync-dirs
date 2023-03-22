@@ -43,7 +43,7 @@ std::vector<Flag> Parser::_parseToFlags(const std::vector<std::string> &args) {
         }
 
         if (flag.size() == 1) {
-            flags.push_back(*new Flag(flag[0], flag[0]));
+            flags.push_back(*new Flag(flag[0]));
         }
     }
 

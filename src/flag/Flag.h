@@ -8,7 +8,8 @@ private:
     std::string key;
     std::string value;
 public:
-    Flag(const std::string &key, const std::string &value);
+    explicit Flag(const std::string &value);
+    explicit Flag(const std::string &key, const std::string &value);
 
     std::string getKey();
     std::string getValue();
