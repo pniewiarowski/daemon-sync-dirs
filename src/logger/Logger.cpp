@@ -1,16 +1,31 @@
 #include "Logger.h"
 
-Logger::Logger(const std::string &path) {
-    this->successPath = path;
-    this->warningPath = path;
-    this->errorPath = path;
+/**
+ * Logger constructor, return instance that will be log all
+ * types of messages to the default file declared as a
+ * const variable.
+ */
+Logger::Logger() :
+        Logger(this->DEFAULT_PATH) {}
 
-    this->_createFiles();
-}
+/**
+ * Logger constructor, returns instance that will be log all
+ * types of messages to the same given file.
+ *
+ * @param path: Path to log all messages.
+ */
+Logger::Logger(const std::string &path) :
+        Logger(path, path, path) {}
 
-Logger::Logger(const std::string &successPath,
-               const std::string &warningPath,
-               const std::string &errorPath) {
+/**
+ * Logger constructor, returns instance that will be log all
+ * types of messages to the different files given as an arguments.
+ *
+ * @param successPath: Path to log success messages.
+ * @param warningPath: Path to log warning messages.
+ * @param errorPath: Path to log error messages.
+ */
+Logger::Logger(const std::string &successPath, const std::string &warningPath, const std::string &errorPath) {
     this->successPath = successPath;
     this->warningPath = warningPath;
     this->errorPath = errorPath;
@@ -18,25 +33,12 @@ Logger::Logger(const std::string &successPath,
     this->_createFiles();
 }
 
-void Logger::_createFiles() {
-    auto paths = {
-            this->successPath,
-            this->warningPath,
-            this->errorPath
-    };
-
-    auto mode =
-            std::fstream::in |
-            std::fstream::out |
-            std::fstream::trunc;
-
-    std::fstream filestream;
-    for (const std::string &path: paths) {
-        filestream.open(path, mode);
-        filestream.close();
-    }
-}
-
+/**
+ * Save given message in to file with given path.
+ *
+ * @param message Message to save.
+ * @param path Path to file.
+ */
 void Logger::_log(const std::string &message, const std::string &path) {
     auto t = std::time(nullptr);
     auto tm = *std::localtime(&t);
@@ -53,18 +55,61 @@ void Logger::_log(const std::string &message, const std::string &path) {
     filestream.close();
 }
 
+/**
+ * Static method create file with given path and mode.
+ *
+ * @param path Path for new file.
+ * @param mode Mode for filestream object instance.
+ */
+void Logger::_createFile(const std::string &path, const std::_Ios_Openmode &mode) {
+    std::fstream filestream;
+
+    filestream.open(path, mode);
+    filestream.close();
+}
+
+/**
+ * Create files, ih they does not exists, using current
+ * instance path fields.
+ */
+void Logger::_createFiles() {
+    auto paths = {this->successPath, this->warningPath, this->errorPath};
+    auto mode = std::fstream::in | std::fstream::out | std::fstream::trunc;
+
+    for (const std::string &path: paths) {
+        this->_createFile(path, mode);
+    }
+}
+
+/**
+ * Save given message, as a success type, into correct log file.
+ *
+ * @param message Success message to save.
+ */
 void Logger::success(const std::string &message) {
     auto formatMessage = "[ SUCCESS ]: " + message;
 
     this->_log(formatMessage, this->successPath);
 }
 
+
+/**
+ * Save given message, as a warning type, into correct log file.
+ *
+ * @param message Warning message to save.
+ */
 void Logger::warning(const std::string &message) {
     auto formatMessage = "[ Warning ]: " + message;
 
     this->_log(formatMessage, this->warningPath);
 }
 
+
+/**
+ * Save given message, as an error, type into correct log file.
+ *
+ * @param message Error message to save.
+ */
 void Logger::error(const std::string &message) {
     auto formatMessage = "[ Error ]: " + message;
 
