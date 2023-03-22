@@ -87,7 +87,7 @@ void Logger::_createFiles() {
  * @param message: Success message to save.
  */
 void Logger::success(const std::string &message) {
-    auto formatMessage = "[ SUCCESS ]: " + message;
+    auto formatMessage = this->SUCCESS_TAG + " : " + message;
 
     this->_log(formatMessage, this->successPath);
 }
@@ -99,7 +99,7 @@ void Logger::success(const std::string &message) {
  * @param message: Warning message to save.
  */
 void Logger::warning(const std::string &message) {
-    auto formatMessage = "[ Warning ]: " + message;
+    auto formatMessage = this->WARNING_TAG + " : " + message;
 
     this->_log(formatMessage, this->warningPath);
 }
@@ -111,7 +111,7 @@ void Logger::warning(const std::string &message) {
  * @param message: Error message to save.
  */
 void Logger::error(const std::string &message) {
-    auto formatMessage = "[ Error ]: " + message;
+    auto formatMessage = this->ERROR_TAG + " : " + message;
 
     this->_log(formatMessage, this->errorPath);
 }

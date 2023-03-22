@@ -9,6 +9,9 @@
 class Logger {
 private:
     const std::string DEFAULT_PATH = "messages.log";
+    const std::string SUCCESS_TAG = "[ SUCCESS ]";
+    const std::string WARNING_TAG = "[ WARNING ]";
+    const std::string ERROR_TAG = "[ ERROR ]";
 
     std::string successPath;
     std::string warningPath;
