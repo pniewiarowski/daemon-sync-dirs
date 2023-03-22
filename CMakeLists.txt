@@ -6,4 +6,10 @@ set(CMAKE_CXX_STANDARD 23)
 add_executable(
         daemon_sync_dirs
         ./src/main.cpp
-        src/logger/Logger.cpp src/logger/Logger.h)
+        src/logger/Logger.cpp
+        src/logger/Logger.h
+        src/flag/Flag.cpp
+        src/flag/Flag.h
+        src/flag/Parser.cpp
+        src/flag/Parser.h
+)
