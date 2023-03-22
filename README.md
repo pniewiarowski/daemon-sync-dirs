@@ -7,7 +7,7 @@ University project for Operation Systems lecture, it should sync to directories.
 - CPP działa
 - GCC też działa
 - Wszystko działa
-- Nawet linux, ale czasem to nie
+- linux... jednak nie działa
 - Życie to ciągły ból
 - 2 + 2 to 4 w liczbach rzeczywistych
 - 1410 bitwa pod grunwaldem
