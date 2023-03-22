@@ -5,7 +5,7 @@
  * where key = value, use to contains single parameters
  * flag for example: --flag, or -flag.
  *
- * @param value
+ * @param value: Flag value.
  */
 Flag::Flag(const std::string &value) :
         Flag(value, value) {}
