@@ -76,7 +76,7 @@ void Logger::_createFiles() {
     auto paths = {this->successPath, this->warningPath, this->errorPath};
     auto mode = std::fstream::in | std::fstream::out | std::fstream::trunc;
 
-    for (const std::string &path: paths) {
+    for (auto &path: paths) {
         this->_createFile(path, mode);
     }
 }
