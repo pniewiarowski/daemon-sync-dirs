@@ -3,8 +3,8 @@
 /**
  * Format default console input to vector of strings.
  *
- * @param argc Number of given arguments.
- * @param argv All given arguments.
+ * @param argc: Number of given arguments.
+ * @param argv: All given arguments.
  *
  * @return All provided arguments in vector of strings.
  */
@@ -22,7 +22,7 @@ std::vector<std::string> Parser::_parseToArgs(int argc, char **argv) {
  * Format given vector of strings to vector of
  * flags.
  *
- * @param args Vector with strings of arguments.
+ * @param args: Vector with strings of arguments.
  *
  * @return Vector with Flags.
  */
@@ -53,8 +53,8 @@ std::vector<Flag> Parser::_parseToFlags(const std::vector<std::string> &args) {
 /**
  * Parse default arguments from entry point to vector of Flags.
  *
- * @param argc Number of given arguments.
- * @param argv All given arguments.
+ * @param argc: Number of given arguments.
+ * @param argv: All given arguments.
  *
  * @return Vector of flags.
  */

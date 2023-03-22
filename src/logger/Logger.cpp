@@ -36,8 +36,8 @@ Logger::Logger(const std::string &successPath, const std::string &warningPath, c
 /**
  * Save given message in to file with given path.
  *
- * @param message Message to save.
- * @param path Path to file.
+ * @param message: Message to save.
+ * @param path: Path to file.
  */
 void Logger::_log(const std::string &message, const std::string &path) {
     auto t = std::time(nullptr);
@@ -58,8 +58,8 @@ void Logger::_log(const std::string &message, const std::string &path) {
 /**
  * Static method create file with given path and mode.
  *
- * @param path Path for new file.
- * @param mode Mode for filestream object instance.
+ * @param path: Path for new file.
+ * @param mode: Mode for filestream object instance.
  */
 void Logger::_createFile(const std::string &path, const std::_Ios_Openmode &mode) {
     std::fstream filestream;
@@ -84,7 +84,7 @@ void Logger::_createFiles() {
 /**
  * Save given message, as a success type, into correct log file.
  *
- * @param message Success message to save.
+ * @param message: Success message to save.
  */
 void Logger::success(const std::string &message) {
     auto formatMessage = "[ SUCCESS ]: " + message;
@@ -96,7 +96,7 @@ void Logger::success(const std::string &message) {
 /**
  * Save given message, as a warning type, into correct log file.
  *
- * @param message Warning message to save.
+ * @param message: Warning message to save.
  */
 void Logger::warning(const std::string &message) {
     auto formatMessage = "[ Warning ]: " + message;
@@ -108,7 +108,7 @@ void Logger::warning(const std::string &message) {
 /**
  * Save given message, as an error, type into correct log file.
  *
- * @param message Error message to save.
+ * @param message: Error message to save.
  */
 void Logger::error(const std::string &message) {
     auto formatMessage = "[ Error ]: " + message;

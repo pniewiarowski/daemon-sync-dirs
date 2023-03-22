@@ -3,8 +3,8 @@
 /**
  * Constructor create instance with pair of key and value.
  *
- * @param key Flag key world.
- * @param value Flag value for key.
+ * @param key: Flag key world.
+ * @param value: Flag value for key.
  */
 Flag::Flag(const std::string &key, const std::string &value) {
     this->key = key;
@@ -23,7 +23,7 @@ std::string Flag::getKey() {
 /**
  * Get current value instance.
  *
- * @return  Current value instance.
+ * @return Current value instance.
  */
 std::string Flag::getValue() {
     return this->value;
