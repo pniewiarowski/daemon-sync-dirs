@@ -106,7 +106,7 @@ void Logger::warning(const std::string &message) {
 
 
 /**
- * Save given message, as an error, type into correct log file.
+ * Save given message, as an error type, into correct log file.
  *
  * @param message: Error message to save.
  */
