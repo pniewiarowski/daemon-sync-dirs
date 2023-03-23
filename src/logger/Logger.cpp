@@ -1,5 +1,7 @@
 #include "Logger.h"
 
+#include <utility>
+
 /**
  * Logger constructor, return instance that will be log all
  * types of messages to the default file declared as a
@@ -25,13 +27,10 @@ Logger::Logger(const std::string &path) :
  * @param warningPath: Path to log warning messages.
  * @param errorPath: Path to log error messages.
  */
-Logger::Logger(const std::string &successPath, const std::string &warningPath, const std::string &errorPath) {
-    this->successPath = successPath;
-    this->warningPath = warningPath;
-    this->errorPath = errorPath;
-
-    this->_createFiles();
-}
+Logger::Logger(std::string successPath, std::string warningPath, std::string errorPath)
+        : successPath(std::move(successPath)),
+          warningPath(std::move(warningPath)),
+          errorPath(std::move(errorPath)) { this->_createFiles(); }
 
 /**
  * Save given message in to file with given path.

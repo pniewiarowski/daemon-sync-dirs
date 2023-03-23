@@ -1,5 +1,7 @@
 #include "Flag.h"
 
+#include <utility>
+
 /**
  * Constructor create instance with key and value
  * where key = value, use to contains single parameters
@@ -18,10 +20,8 @@ Flag::Flag(const std::string &value) :
  * @param key: Flag key world.
  * @param value: Flag value for key.
  */
-Flag::Flag(const std::string &key, const std::string &value) {
-    this->key = key;
-    this->value = value;
-}
+Flag::Flag(std::string key, std::string value)
+        : key(std::move(key)), value(std::move(value)) {}
 
 /**
  * Get current key instance.

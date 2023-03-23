@@ -25,7 +25,7 @@ private:
 public:
     explicit Logger();
     explicit Logger(const std::string &path);
-    explicit Logger(const std::string &successPath, const std::string &warningPath, const std::string &errorPath);
+    explicit Logger(std::string successPath, std::string warningPath, std::string errorPath);
 
     void success(const std::string &message);
     void warning(const std::string &message);

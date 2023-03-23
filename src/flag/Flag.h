@@ -9,7 +9,7 @@ private:
     std::string value;
 public:
     explicit Flag(const std::string &value);
-    explicit Flag(const std::string &key, const std::string &value);
+    explicit Flag(std::string key, std::string value);
 
     std::string getKey();
     std::string getValue();
