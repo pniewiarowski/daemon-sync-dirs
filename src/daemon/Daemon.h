@@ -2,14 +2,16 @@
 #define DAEMON_SYNC_DIRS_DAEMON_H
 
 #include "../logger/Logger.h"
+#include "../watcher/Watcher.h"
 
 namespace daemon {
     class Daemon {
     private:
-        logger::Logger *logger;
+        logger::Logger *logger{};
+        watcher::Watcher *watcher{};
     public:
-        explicit Daemon();
-        explicit Daemon(logger::Logger *logger);
+        explicit Daemon(watcher::Watcher *watcher);
+        explicit Daemon(watcher::Watcher *watcher, logger::Logger *logger);
 
         void execute();
     };
