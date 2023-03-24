@@ -12,6 +12,7 @@ add_executable(
         src/flag/Flag.h
         src/flag/Parser.cpp
         src/flag/Parser.h
+        src/watcher/Status.h
         src/watcher/Watcher.cpp
         src/watcher/Watcher.h
         src/daemon/Daemon.cpp

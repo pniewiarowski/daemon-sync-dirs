@@ -8,13 +8,9 @@
 #include <thread>
 #include <utility>
 
-namespace watcher {
-    enum class Status {
-        CREATED,
-        MODIFIED,
-        DELETED,
-    };
+#include "Status.h"
 
+namespace watcher {
     class Watcher {
     private:
         const std::chrono::duration<int, std::milli> DEFAULT_DELAY = std::chrono::milliseconds(5000);
