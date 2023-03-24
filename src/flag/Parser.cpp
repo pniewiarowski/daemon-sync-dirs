@@ -8,7 +8,7 @@
  *
  * @return All provided arguments in vector of strings.
  */
-std::vector<std::string> Parser::_parseToArgs(int argc, char **argv) {
+std::vector<std::string> flag::Parser::_parseToArgs(int argc, char **argv) {
     std::vector<std::string> args;
 
     if (argc > 1) {
@@ -26,7 +26,7 @@ std::vector<std::string> Parser::_parseToArgs(int argc, char **argv) {
  *
  * @return Vector with Flags.
  */
-std::vector<Flag> Parser::_parseToFlags(const std::vector<std::string> &args) {
+std::vector<flag::Flag> flag::Parser::_parseToFlags(const std::vector<std::string> &args) {
     std::vector<Flag> flags;
     std::string out;
 
@@ -58,6 +58,6 @@ std::vector<Flag> Parser::_parseToFlags(const std::vector<std::string> &args) {
  *
  * @return Vector of flags.
  */
-std::vector<Flag> Parser::parse(int argc, char **argv) {
+std::vector<flag::Flag> flag::Parser::parse(int argc, char **argv) {
     return Parser::_parseToFlags(Parser::_parseToArgs(argc, argv));
 }

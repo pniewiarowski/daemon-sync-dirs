@@ -6,7 +6,7 @@
  *
  * @param path: Path to watch.
  */
-Watcher::Watcher(std::string path)
+watcher::Watcher::Watcher(std::string path)
         : path(std::move(path)) {
     this->delay = this->DEFAULT_DELAY;
 }
@@ -18,7 +18,7 @@ Watcher::Watcher(std::string path)
  * @param path: Path to watch.
  * @param delay Delay after single check.
  */
-Watcher::Watcher(std::string path, const std::chrono::duration<int, std::milli> &delay)
+watcher::Watcher::Watcher(std::string path, const std::chrono::duration<int, std::milli> &delay)
         : path(std::move(path)), delay(delay) {}
 
 /**
@@ -26,6 +26,6 @@ Watcher::Watcher(std::string path, const std::chrono::duration<int, std::milli> 
  *
  * @param action Callback function to subscribe file status changes.
  */
-void Watcher::start(const std::function<void(std::string, Status)> &action) {
+void watcher::Watcher::start(const std::function<void(std::string, Status)> &action) {
     /** NOT IMPLEMENTED YET */
 }

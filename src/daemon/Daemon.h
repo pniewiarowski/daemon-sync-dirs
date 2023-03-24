@@ -3,14 +3,16 @@
 
 #include "../logger/Logger.h"
 
-class Daemon {
-private:
-    Logger *logger;
-public:
-    explicit Daemon();
-    explicit Daemon(Logger *logger);
+namespace daemon {
+    class Daemon {
+    private:
+        logger::Logger *logger;
+    public:
+        explicit Daemon();
+        explicit Daemon(logger::Logger *logger);
 
-    void execute();
-};
+        void execute();
+    };
+}
 
 #endif //DAEMON_SYNC_DIRS_DAEMON_H

@@ -6,30 +6,33 @@
 #include <ctime>
 #include <iomanip>
 
-class Logger {
-private:
-    const std::string DEFAULT_PATH = "messages.log";
-    const std::string SUCCESS_TAG = "[ SUCCESS ]";
-    const std::string WARNING_TAG = "[ WARNING ]";
-    const std::string ERROR_TAG = "[ ERROR ]";
+namespace logger {
+    class Logger {
+    private:
+        const std::string DEFAULT_PATH = "messages.log";
+        const std::string SUCCESS_TAG = "[ SUCCESS ]";
+        const std::string WARNING_TAG = "[ WARNING ]";
+        const std::string ERROR_TAG = "[ ERROR ]";
 
-    std::string successPath;
-    std::string warningPath;
-    std::string errorPath;
+        std::string successPath;
+        std::string warningPath;
+        std::string errorPath;
 
-    static void _log(const std::string &message, const std::string &path);
-    static void _createFile(const std::string &path, const std::_Ios_Openmode &mode);
+        static void _log(const std::string &message, const std::string &path);
+        static void _createFile(const std::string &path, const std::_Ios_Openmode &mode);
 
-    void _createFiles();
+        void _createFiles();
 
-public:
-    explicit Logger();
-    explicit Logger(const std::string &path);
-    explicit Logger(std::string successPath, std::string warningPath, std::string errorPath);
+    public:
+        explicit Logger();
+        explicit Logger(const std::string &path);
+        explicit Logger(std::string successPath, std::string warningPath, std::string errorPath);
 
-    void success(const std::string &message);
-    void warning(const std::string &message);
-    void error(const std::string &message);
-};
+        void success(const std::string &message);
+        void warning(const std::string &message);
+        void error(const std::string &message);
+    };
+
+}
 
 #endif //DAEMON_SYNC_DIRS_LOGGER_H

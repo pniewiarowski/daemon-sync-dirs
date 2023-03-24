@@ -4,8 +4,8 @@
  * Daemon constructor return Daemon instance with
  * default parameters.
  */
-Daemon::Daemon() {
-    this->logger = new Logger();
+daemon::Daemon::Daemon() {
+    this->logger = new logger::Logger();
 }
 
 /**
@@ -14,13 +14,13 @@ Daemon::Daemon() {
  *
  * @param logger Logger instance.
  */
-Daemon::Daemon(Logger *logger) {
+daemon::Daemon::Daemon(logger::Logger *logger) {
     this->logger = logger;
 }
 
 /**
  * Execute current daemon instance.
  */
-void Daemon::execute() {
+void daemon::Daemon::execute() {
     /** NOT IMPLEMENTED YET */
 }

@@ -9,7 +9,7 @@
  *
  * @param value: Flag value.
  */
-Flag::Flag(const std::string &value) :
+flag::Flag::Flag(const std::string &value) :
         Flag(value, value) {}
 
 /**
@@ -20,7 +20,7 @@ Flag::Flag(const std::string &value) :
  * @param key: Flag key world.
  * @param value: Flag value for key.
  */
-Flag::Flag(std::string key, std::string value)
+flag::Flag::Flag(std::string key, std::string value)
         : key(std::move(key)), value(std::move(value)) {}
 
 /**
@@ -28,7 +28,7 @@ Flag::Flag(std::string key, std::string value)
  *
  * @return Current key instance.
  */
-std::string Flag::getKey() {
+std::string flag::Flag::getKey() {
     return this->key;
 }
 
@@ -37,6 +37,6 @@ std::string Flag::getKey() {
  *
  * @return Current value instance.
  */
-std::string Flag::getValue() {
+std::string flag::Flag::getValue() {
     return this->value;
 }
