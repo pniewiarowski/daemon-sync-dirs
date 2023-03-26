@@ -1,7 +1,5 @@
 #include "Flag.h"
 
-#include <utility>
-
 /**
  * Constructor create instance with key and value
  * where key = value, use to contains single parameters

@@ -2,6 +2,7 @@
 #define DAEMON_SYNC_DIRS_FLAG_H
 
 #include <string>
+#include <utility>
 
 namespace flag {
     class Flag {

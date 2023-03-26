@@ -1,10 +1,13 @@
-#ifndef DAEMON_SYNC_DIRS_DAEMON_H
-#define DAEMON_SYNC_DIRS_DAEMON_H
+#ifndef DAEMON_SYNC_DIRS_SYNCDAEMON_H
+#define DAEMON_SYNC_DIRS_SYNCDAEMON_H
+
+#include <unistd.h>
+#include <sys/stat.h>
 
 #include "../logger/Logger.h"
 #include "../watcher/Watcher.h"
 
-namespace daemon {
+namespace syncdaemon {
     class Daemon {
     private:
         logger::Logger *logger{};
